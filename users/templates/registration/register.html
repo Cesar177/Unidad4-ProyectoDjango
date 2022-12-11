@@ -1,0 +1,88 @@
+{% extends "../base.html" %} {% block content %}
+
+{% load static %}
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top" data-scrollto-offset="0" style="margin: 25px;">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <a href="#" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1>DJango Projects<span>.</span></h1>
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto" href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'portafolios' %}" class="nav-link scrollto">Proyectos</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'create'%}">Crear Proyecto</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'login' %}">Iniciar Sesión</a></li>
+        <li><a href="{% url 'register' %}" class="active">Registrese</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle d-none"></i>
+    </nav><!-- .navbar -->
+
+    <a class="btn-getstarted scrollto" href="{% url 'index' %}">Home</a>
+
+  </div>
+</header><!-- End Header -->
+
+<main id="main" style="margin: 150px;">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Registrese</h2>
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>Proyectos</li>
+        </ol>
+      </div>
+
+    </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Blog Section ======= -->
+  <section id="blog" class="blog" style="margin: 10;">
+
+
+    <div class="mt-5">
+      <div class="card" style="width: 50%; margin: auto">
+        <div class="card-body">
+          <h2>Register</h2>
+          <form method="post" novalidate>{% csrf_token %} {{ form.as_p }}
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Crear Usuario</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+        const inputs = document.querySelectorAll("input");
+      
+        inputs.forEach((input) => input.classList.add("form-control"));
+    </script>
+
+      
+  </section><!-- End Blog Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
+
+
+
+
+
+
+
+
+  {% endblock content %}
